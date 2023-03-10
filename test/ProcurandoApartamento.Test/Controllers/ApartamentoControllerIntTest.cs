@@ -231,9 +231,6 @@ namespace ProcurandoApartamento.Test.Controllers
         public async Task GetMelhorApartamento()
         {
             string[] payload = { "ACADEMIA" };
-           // HttpContent c = new StringContent(payload, Encoding.UTF8, "application/json");
-            //string arr = "ACADEMIA";
-            
             var response = await _client.PostAsync("/api/apartamentos/melhorapartamento" , TestUtil.ToJsonContent(payload));
             response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
